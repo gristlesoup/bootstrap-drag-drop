@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039) -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
+
+    <title>Theme Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style id="holderjs-style" type="text/css"></style>
+  <style>
+    .centered {
+      text-align: center;
+    }
+    .centered h1 {
+      display: inline-block;
+      font-size: 1000%
+    }
+
+  </style>
+</head>
+
+  <body role="document">
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="page-header">
+        <h1>List groups</h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <ul class="list-group">
+            <!-- <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li> -->
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <div class="list-group">
+            <!-- <a href="#" class="list-group-item active">
+              <h4 class="list-group-item-heading">List group item heading</h4>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </a>
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading">List group item heading</h4>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </a>
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading">List group item heading</h4>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class=" centered">
+        <h1><span class="glyphicon glyphicon-circle-arrow-left"></span></h1><h1>&nbsp;</h1><h1><span class="glyphicon glyphicon-circle-arrow-right"></span></h1>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/docs.min.js"></script>
+    <script>
+
+      $(function(){
+
+
+        var correctCards = 0;
+
+        var q1 = "Define, choose";
+        var q2 = "Classify, select, explain, match";
+        var q3 = "Apply, solve";
+        var q4 = "Compare, contrast, differentiate";
+        var q5 = "Develop, create, plan";
+        var q6 = "Compare, judge, defend";
+        // var q7 = "The way or manner in which a pathogen is spread.";
+        // var q8 = "The reasonably anticipated skin, eye, mucous membrane, or parenteral contact with blood or other potentially infectious materials (O.P.I.M.)";
+        // var q9 = "A concept under which blood and all body fluids and excretions (except sweat) whether or not they contain visible blood, non-intact skin and mucous membranes pose a risk for transmission of bloodborne diseases. They are designed to reduce risk from recognized and unrecognized sources of infection.";
+  
+        var a1 = "Knowledge";
+        var a2 = "Comprehension";
+        var a3 = "Application";
+        var a4 = "Analysis";
+        var a5 = "Synthesis";
+        var a6 = "Evaluation";
+        // var a7 = "Transmission";
+        // var a8 = "Occupational Exposure";
+        // var a9 = "Standard Precautions"; 
+
+        var qArray = [q2,q4,q1,q6,q3,q5]
+        var aArray = [a2,a4,a1,a6,a3,a5]
+ 
+        $( init );
+          
+          function init() {
+
+            function randomInt (min, max) {
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+
+
+            var numArray = [1,2,3,4,5,6];
+            var randArray = [1,2,3,4,5,6];
+            var randArray = randArray.sort(function() { return 0.5 - Math.random() });
+           
+
+            for (var i=1; i <= qArray.length; i++) {
+              $('<a id="slot'+i+'" class="list-group-item" data-number="'+i+'"><h4 class="list-group-item-heading">&nbsp;</h4><p class="list-group-item-text">'+qArray[i-1]+'</p></a>').appendTo('div.list-group').droppable( {
+              accept: 'li.list-group-item',
+              hoverClass: 'hovered',
+              drop: handleCardDrop
+              });
+            }
+
+            
+            
+
+        
+        
+            for (var i=0; i < randArray.length; i++) {
+
+              var myRandomInt = randomInt(-10,10);
+              $('<li class="list-group-item" id="card'+randArray[i]+'" data-deg="'+myRandomInt+'" data-number="'+randArray[i]+'">'+aArray[i]+'</li>').appendTo('ul.list-group').draggable(
+                {
+                  stack: 'a.list-group-item',
+                  cursor: 'move',
+                  revert: true
+                });
+            }
+  
+            // Hide the success message
+            $('#successMessage').hide();
+            $('#successMessage').css( {
+              left: '580px',
+              top: '250px',
+              width: 0,
+              height: 0
+            } );
+       
+            // Create the pile of shuffled cards
+            $('li.list-group-item').draggable( {
+                stack: 'ul.list-group',
+                cursor: 'move',
+                revert: true
+              } );
+
+            $('a.list-group-item').droppable( {
+                accept: 'li.list-group-item',
+                hoverClass: 'hovered',
+                drop: handleCardDrop
+              } );
+          }
+
+          function handleCardDrop( event, ui ) {
+            var slotNumber = $(this).data( 'number' );
+            var cardNumber = ui.draggable.data( 'number' );
+            var cardText = ui.draggable.text();
+           
+            // If the card was dropped to the correct slot,
+            // change the card colour, position it directly
+            // on top of the slot, and prevent it being dragged
+            // again
+           
+            if ( slotNumber == cardNumber ) {
+              
+              
+              ui.draggable.hide();
+              $('h4', this).text(cardText);
+              $(this).addClass( 'list-group-item active' );
+              ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+              ui.draggable.draggable( 'option', 'revert', false );
+              correctCards++;
+            } 
+             
+            // If all the cards have been placed correctly then display a message
+            // and reset the cards for another go
+           
+            if ( correctCards == 6 ) {
+              $('#successMessage').show();
+              $('#successMessage').animate( {
+                left: '20%',
+                top: '40%',
+                width: '400px',
+                height: '100px',
+                opacity: 1
+              });
+            }
+           
+          }
+        });
+
+      </script>
+</body>
+</html>
